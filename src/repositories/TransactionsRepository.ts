@@ -19,14 +19,6 @@ class TransactionsRepository {
     this.transactions = [];
   }
 
-  private getTotalByType(type: 'income' | 'outcome'): number {
-    const reduced = this.transactions.reduce((acumulator, transaction) => {
-      return acumulator + transaction.type === type ? transaction.value : 0;
-    }, 0);
-
-    return reduced;
-  }
-
   public all(): Transaction[] {
     return this.transactions;
   }
